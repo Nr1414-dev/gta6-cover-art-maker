@@ -1,0 +1,57 @@
+@font-face {
+  font-family: 'Anton';
+  src: url('./fonts/Anton-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pacifico';
+  src: url('./fonts/Pacifico-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+
+html, body { margin: 0; min-height: 100%; background: #12041f; color: #f5eefc; font: 15px/1.45 system-ui, sans-serif; }
+[hidden] { display: none !important; }
+.app { display: flex; gap: 28px; align-items: flex-start; justify-content: center; padding: 22px; box-sizing: border-box; max-width: 1440px; margin: 0 auto; }
+.controls { display: flex; flex-direction: column; gap: 10px; width: 340px; flex: none; background: #1d0a33; border: 1px solid #4a1e6e; border-radius: 14px; padding: 18px; box-sizing: border-box; }
+.controls h1 { margin: 0; font-family: 'Anton', sans-serif; font-size: 30px; letter-spacing: 1px; color: #ffd76a; line-height: 1.05; }
+.controls h1 span { display: block; font-size: 18px; color: #ff5e7a; letter-spacing: 3px; }
+.controls h2 { margin: 10px 0 0; font-family: 'Anton', sans-serif; font-size: 15px; letter-spacing: 1.5px; color: #7df3ff; text-transform: uppercase; }
+.tagline { margin: 0; color: #cdb8e6; font-size: 13px; }
+.hint { margin: 0; color: #a98fc4; font-size: 12.5px; }
+.fineprint { margin: 6px 0 0; color: #8d74ab; font-size: 11.5px; }
+label { display: flex; flex-direction: column; gap: 5px; font-weight: 600; font-size: 13px; }
+input[type=text], select { font: inherit; padding: 8px 10px; border: 1px solid #5b2f86; border-radius: 8px; background: #2a1045; color: #fff; }
+input[type=range] { width: 100%; accent-color: #ff2e88; }
+button { font: inherit; font-weight: 700; padding: 10px 12px; border: 0; border-radius: 8px; background: #3a1a5e; color: #fff; cursor: pointer; }
+button:hover { background: #4a2276; }
+button.primary { background: linear-gradient(135deg, #ff2e88, #ff7a3d); font-size: 16px; padding: 12px; }
+button.primary:hover { filter: brightness(1.12); }
+button.ghost { background: transparent; border: 1px dashed #7a4aa8; color: #e6c8ff; }
+button.mini { padding: 4px 10px; font-size: 13px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { padding: 7px 10px; font-size: 13px; background: #2a1045; border: 1px solid #5b2f86; }
+.chip.on { background: #ff2e88; border-color: #ff2e88; color: #fff; }
+.grade-chip { display: inline-flex; align-items: center; gap: 7px; }
+.swatch { width: 16px; height: 16px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.7); flex: none; }
+.photos { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.slot { position: relative; min-height: 74px; border: 1px dashed #7a4aa8; border-radius: 8px; overflow: hidden; background: #24103c; display: flex; align-items: center; justify-content: center; }
+.slot-label { position: absolute; top: 4px; left: 6px; font-size: 11px; font-weight: 700; color: #fff; text-shadow: 0 1px 3px #000; z-index: 2; }
+.slot-thumb { width: 100%; height: 74px; object-fit: cover; display: block; }
+.slot-empty { color: #a98fc4; font-size: 12px; padding: 22px 8px 8px; text-align: center; }
+.slot-add { position: absolute; right: 5px; bottom: 5px; font-size: 11px; font-weight: 700; color: #12041f; background: #7df3ff; border-radius: 20px; padding: 3px 8px; cursor: pointer; z-index: 2; }
+.heat-row { display: flex; align-items: center; gap: 10px; }
+.heat-row input { flex: 1; }
+#heatVal { color: #ffd76a; letter-spacing: 2px; white-space: nowrap; }
+#status { color: #7df3ff; min-height: 1.2em; margin: 0; font-size: 13px; }
+.preview { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 10px; position: sticky; top: 22px; }
+.preview canvas { max-width: 100%; max-height: calc(100vh - 90px); width: auto; height: auto; box-shadow: 0 12px 44px rgba(0,0,0,0.55); border-radius: 4px; }
+.preview-note { margin: 0; color: #a98fc4; font-size: 13px; }
+body.shot-cover .controls, body.shot-cover .preview-note { display: none; }
+body.shot-cover .app { padding: 0; max-width: none; }
+body.shot-cover .preview { position: static; }
+body.shot-cover canvas { max-height: none; width: 100vw; height: 100vh; object-fit: contain; box-shadow: none; border-radius: 0; background: #12041f; }
+@media (max-width: 900px) {
+  .app { flex-direction: column; }
+  .controls { width: 100%; }
+  .preview { position: static; width: 100%; }
+}
